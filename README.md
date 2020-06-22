@@ -1,7 +1,7 @@
 # Accelerated-Gradient-Descent-
 Exploring Optimization methods with parallel computation techniques
 
-##Problem Statement 
+## Problem Statement 
 Given a system of linear equations, solve it using the iterative optimization techniques, e.g. Gradient Descent and its faster variants. A system of linear equations is given by ![first image](https://latex.codecogs.com/gif.latex?%5Ctextbf%7BAx%7D%20%3D%20%5Ctextbf%7Bb%7D) where A is the coefficient matrix and x is vector of variables. 
 
 
