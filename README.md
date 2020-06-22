@@ -37,6 +37,17 @@ With this observation in mind, one starts with a guess ![](https://latex.codecog
 We have a monotonic sequence
 > ![](https://latex.codecogs.com/gif.latex?F%28%5Ctextbf%7B%24%20x_%7B0%7D%20%24%7D%29%20%5Cgeq%20%24%20F%28%5Ctextbf%7B%24%20x_%7B1%7D%20%24%7D%29%20%24%20%5Cgeq%20%24%20F%28%5Ctextbf%7B%24%20x%20_%7B2%7D%20%24%7D%29%20%24%5Cgeq%20%5Ccdots),
 
-so hopefully the sequence ![](https://latex.codecogs.com/gif.latex?%28%5Ctextbf%7B%24x%20_%7Bn%7D%24%7D%29) converges to the desired local minimum. Note that the value of the step size ![](https://latex.codecogs.com/gif.latex?%5Cgamma) is allowed to change at every iteration. With certain assumptions on the function F (for example, F convex and $\nabla$F Lipschitz) and particular choices of ![](https://latex.codecogs.com/gif.latex?%5Cgamma), 
+so hopefully the sequence ![](https://latex.codecogs.com/gif.latex?%28%5Ctextbf%7B%24x%20_%7Bn%7D%24%7D%29) converges to the desired local minimum. Note that the value of the step size ![](https://latex.codecogs.com/gif.latex?%5Cgamma) is allowed to change at every iteration. With certain assumptions on the function F (for example, F convex and ![](https://latex.codecogs.com/gif.latex?%5Cnabla%20F) Lipschitz) and particular choices of ![](https://latex.codecogs.com/gif.latex?%5Cgamma), 
 convergence to a local minimum can be guaranteed. When the function F is convex, all local minima are also global minima, so in this case gradient descent can converge to the global solution.
 
+### Complexity and Convergence Analysis
+#### Complexity
+
+- For strongly convex and smooth functions, the convergence rate of gradient descent is ![](https://latex.codecogs.com/gif.latex?O%28klog%28%5Cfrac%7B1%7D%7B%5Cepsilon%7D%29%29), where ![](https://latex.codecogs.com/gif.latex?%5Cepsilon) is error tolerance.
+
+- For convex and smooth functions, the convergence rate of gradient descent is ![](https://latex.codecogs.com/gif.latex?O%28%5Cfrac%7B1%7D%7B%5Cepsilon%7D%29)
+#### Convergence Analysis
+
+
+
+    \item For convex and smooth functions, the convergence rate of gradient descent is O($\frac{1}{\epsilon}$)
