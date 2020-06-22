@@ -2,8 +2,9 @@
 Exploring Optimization methods with parallel computation techniques
 
 Given a system of linear equations, solve it using the iterative optimization techniques, e.g. Gradient Descent and its faster variants. A system of linear equations is given by   <br /> 
-![first image](https://latex.codecogs.com/gif.latex?%5Ctextbf%7BAx%7D%20%3D%20%5Ctextbf%7Bb%7D) <br />
-where A is the coefficient matrix and x is vector of variables. 
+<pre>                                  ![first image](https://latex.codecogs.com/gif.latex?%5Ctextbf%7BAx%7D%20%3D%20%5Ctextbf%7Bb%7D) where A is the coefficient matrix and x is vector of variables. 
+</pre>
+
 
 This problem can be converted to an optimization problem. <br />
 ![](https://latex.codecogs.com/gif.latex?%5Ctextit%7Bmin%20F%28x%29%7D%20%3D%20%28Ax-b%29%5ET%28Ax-b%29)
