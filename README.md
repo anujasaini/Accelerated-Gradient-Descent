@@ -44,10 +44,29 @@ convergence to a local minimum can be guaranteed. When the function F is convex,
 #### Complexity
 
 - For strongly convex and smooth functions, the convergence rate of gradient descent is ![](https://latex.codecogs.com/gif.latex?O%28klog%28%5Cfrac%7B1%7D%7B%5Cepsilon%7D%29%29), where ![](https://latex.codecogs.com/gif.latex?%5Cepsilon) is error tolerance.
-
 - For convex and smooth functions, the convergence rate of gradient descent is ![](https://latex.codecogs.com/gif.latex?O%28%5Cfrac%7B1%7D%7B%5Cepsilon%7D%29)
+
 #### Convergence Analysis
+- Gradient Descent algorithm focuses on improving cost per iteration, which might be too “short-sighted” view. So, we can exploit information from past iterations to get better idea of gradient.
+- Gradient Descent algorithm might sometimes zigzag or experience abrupt changes. So we can add buffer (like momentum) to yield smoother trajectory and hence avoid zigzag or abrupt changes.
 
 
+## Heavy Ball Method 
+### Introduction 
 
-    \item For convex and smooth functions, the convergence rate of gradient descent is O($\frac{1}{\epsilon}$)
+We consider the objective function ![](https://latex.codecogs.com/gif.latex?f) to be l-strongly convex and L-smooth. Thus,
+![](https://latex.codecogs.com/gif.latex?lI%20%5Cleq%20%5Cnabla%5E%7B2%7Df%20%5Cleq%20LI%20%24%2C%20where%20%24%5Ckappa%20%3D%20%5Cfrac%7BL%7D%7Bl%7D). 
+![](https://latex.codecogs.com/gif.latex?I%20%3D%20Identity%20Matrix) 
+
+The heavy-ball method is a multi-step iterative method that exploits iterates prior to the most recent one. It does so by maintaining the momentum of the previous two iterates. If you imagine each iterate as a point in the trajectory of a falling ball, then the points carry with them a momentum or a velocity. The heavy ball method is one way of guarding against zigzagging trajectories in iterative descent.
+
+### Algorithm 
+
+Our task is to minimize the function ![](https://latex.codecogs.com/gif.latex?f%28%5Ctextbf%7Bx%7D%29) where ![](https://latex.codecogs.com/gif.latex?x%20%5Cin%20%5Cmathbb%7BR%7D%5E%7Bn%7D). Heavy ball method is also called chebyshev
+iterative method. Its update rule is
+> ![](https://latex.codecogs.com/gif.latex?x%5E%7Bk&plus;1%7D%20%3D%20x%5E%7Bk%7D%20-%20%5Cgamma%20%5Chspace%7B1mm%7D%20%5Cnabla%20f%28x%29%20&plus;%20%5Cbeta%20%28x%5E%7Bk%7D%20-%20x%5E%7Bk-1%7D%29)
+
+### Complexity and Convergence Analysis
+The convergence rate of heavy ball method is ![](https://latex.codecogs.com/gif.latex?O%28%5Csqrt%7B%5Ckappa%7D%20log%28%5Cfrac%7B1%7D%7B%5Cepsilon%7D%29%29)
+
+## 
