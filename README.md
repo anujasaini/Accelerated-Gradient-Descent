@@ -69,4 +69,25 @@ iterative method. Its update rule is
 ### Complexity and Convergence Analysis
 The convergence rate of heavy ball method is ![](https://latex.codecogs.com/gif.latex?O%28%5Csqrt%7B%5Ckappa%7D%20log%28%5Cfrac%7B1%7D%7B%5Cepsilon%7D%29%29)
 
-## 
+## Nesterov's accelerated gradient methods
+
+### Introduction 
+Nesterov's Accelerated Gradient Descent performs a simple step of gradient descent to go from ![](https://latex.codecogs.com/gif.latex?%7Bx_%7Bs%7D%7D%24%20to%20%24%7By_%7Bs&plus;1%7D%7D), and then it ‘slides’ a little bit further than ![](https://latex.codecogs.com/gif.latex?%7By_%7Bs&plus;1%7D%7D) in the direction given by the previous point ![](https://latex.codecogs.com/gif.latex?%7By_%7Bs%7D%7D.)
+
+It alternates between gradient updates and proper extrapolation.   each iteration takes nearly same cost as GD. It is not a descent method (i.e. we may not have ![](https://latex.codecogs.com/gif.latex?f%28x%5E%7Bk%7D%20&plus;%201%29) ![](https://latex.codecogs.com/gif.latex?%5Cleq%20f%28x%5E%7Bk%7D%29%29)
+
+### Algorithm 
+
+In order to minimize the function ![](https://latex.codecogs.com/gif.latex?f%28%5Ctextbf%7Bx%7D%29%24%20where%20x%20%24%5Cin%20%5Cmathbb%7BR%7D%5E%7Bn%7D). The update rule is:
+> ![](https://latex.codecogs.com/gif.latex?x%5E%7Bk&plus;1%7D%20%3D%20y%5E%7Bk%7D%20-%20%5Cgamma%20%5Chspace%7B1mm%7D%20%5Cnabla%20f%28y%5E%7Bk%7D%29)
+> ![](https://latex.codecogs.com/gif.latex?y%5E%7Bk&plus;1%7D%20%3D%20x%5E%7Bk&plus;1%7D%20&plus;%20%5Cfrac%7Bk%7D%7Bk&plus;3%7D%20%28x%5E%7Bk&plus;1%7D%20-%20x%5E%7Bk%7D%29)
+
+### Complexity and Convergence Analysis
+
+The iteration complexity of the algorithm is ![](https://latex.codecogs.com/gif.latex?O%28%5Cfrac%7B1%7D%7B%5Csqrt%7B%5Cepsilon%7D%7D%29). This overall is much faster than the gradient decent. Also, the coefficient ![](https://latex.codecogs.com/gif.latex?%5Cfrac%7Bk%7D%7Bk&plus;3%7D) can be shown to be mystically working using the differential equation and damped spring based motion.
+
+## Accelerated proximal gradient methods (FISTA)
+
+
+
+
