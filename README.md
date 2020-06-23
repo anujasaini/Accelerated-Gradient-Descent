@@ -113,3 +113,4 @@ gradient method (i.e. ![](https://latex.codecogs.com/gif.latex?O%28%5Cfrac%7B1%7
 
 ## Results from Serial Code 
 Convergence steps required for the  each algorithm vs the size of the problem i.e n is shown.
+![](https://github.com/anujasaini/Accelerated-Gradient-Descent-/blob/master/img/steps.png)
