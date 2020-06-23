@@ -88,6 +88,21 @@ The iteration complexity of the algorithm is ![](https://latex.codecogs.com/gif.
 
 ## Accelerated proximal gradient methods (FISTA)
 
+### Introduction
+
+Fast iterative shrinkage-thresholding algorithm (FISTA) preserves the computational simplicity of FISTA but with a global rate of convergence which is proven to be significantly better, both theoretically and practically. It again is not a descent method but works as well as Nesterov.
+
+### Algorithm 
+
+In order to minimize the function ![](https://latex.codecogs.com/gif.latex?f%28%5Ctextbf%7Bx%7D%29) where ![](https://latex.codecogs.com/gif.latex?x%20%5Cin%20%5Cmathbb%7BR%7D%5E%7Bn%7D). The update rule is:
+> ![](https://latex.codecogs.com/gif.latex?x%5E%7Bk&plus;1%7D%20%3D%20prox_%7B%5Cgamma%20h%7D%28y%5E%7Bk%7D%20-%20%5Cgamma%20%5Chspace%7B1mm%7D%20%5Cnabla%20f%28y%5E%7Bk%7D%29)
+> ![](https://latex.codecogs.com/gif.latex?y%5E%7Bk&plus;1%7D%20%3D%20x%5E%7Bk&plus;1%7D%20&plus;%20%5Cfrac%7B%5Ctheta_%7Bk%7D%20-%201%7D%7B%5Ctheta_%7Bk&plus;1%7D%7D%20%28x%5E%7Bk&plus;1%7D%20-%20x%5E%7Bk%7D%29)
+
+where ![](https://latex.codecogs.com/gif.latex?y%5E%7B0%7D%3Dx%5E%7B0%7D), ![](https://latex.codecogs.com/gif.latex?%5Ctheta_%7B0%7D%20%3D%201%20and%20%5Ctheta_%7Bk&plus;1%7D%20%3D%20%5Cfrac%7B1%20&plus;%20%5Csqrt%7B1%20&plus;%204%5Ctheta_%7Bk%7D%5E%7B2%7D%29%7D%7D%7B2%7D)
+
+Here, the proximal function is taken to be zero. In general, proximal of any function with parameter ![](https://latex.codecogs.com/gif.latex?%5Cgamma) is given by
+     ![](https://latex.codecogs.com/gif.latex?%5Ctextit%7B%24prox_%7B%5Cgamma%20f%7D%28v%29%24%7D%20%3D%20argmin%28f%28x%29%20&plus;%20%5Cgamma%20%7C%7Cx-v%7C%7C%5E%7B2%7D%29)
+if the function is taken is taken as f(x) = constant, which is the case with us, proximal will be same as v. Hence, the update rule remains the same. 
 
 
 
