@@ -98,11 +98,23 @@ In order to minimize the function ![](https://latex.codecogs.com/gif.latex?f%28%
 > ![](https://latex.codecogs.com/gif.latex?x%5E%7Bk&plus;1%7D%20%3D%20prox_%7B%5Cgamma%20h%7D%28y%5E%7Bk%7D%20-%20%5Cgamma%20%5Chspace%7B1mm%7D%20%5Cnabla%20f%28y%5E%7Bk%7D%29)
 > ![](https://latex.codecogs.com/gif.latex?y%5E%7Bk&plus;1%7D%20%3D%20x%5E%7Bk&plus;1%7D%20&plus;%20%5Cfrac%7B%5Ctheta_%7Bk%7D%20-%201%7D%7B%5Ctheta_%7Bk&plus;1%7D%7D%20%28x%5E%7Bk&plus;1%7D%20-%20x%5E%7Bk%7D%29)
 
-where ![](https://latex.codecogs.com/gif.latex?y%5E%7B0%7D%3Dx%5E%7B0%7D), ![](https://latex.codecogs.com/gif.latex?%5Ctheta_%7B0%7D%20%3D%201%20and%20%5Ctheta_%7Bk&plus;1%7D%20%3D%20%5Cfrac%7B1%20&plus;%20%5Csqrt%7B1%20&plus;%204%5Ctheta_%7Bk%7D%5E%7B2%7D%29%7D%7D%7B2%7D)
+where ![](https://latex.codecogs.com/gif.latex?y%5E%7B0%7D%3Dx%5E%7B0%7D), 
+> ![](https://latex.codecogs.com/gif.latex?%5Ctheta_%7B0%7D%20%3D%201%20and%20%5Ctheta_%7Bk&plus;1%7D%20%3D%20%5Cfrac%7B1%20&plus;%20%5Csqrt%7B1%20&plus;%204%5Ctheta_%7Bk%7D%5E%7B2%7D%29%7D%7D%7B2%7D)
 
 Here, the proximal function is taken to be zero. In general, proximal of any function with parameter ![](https://latex.codecogs.com/gif.latex?%5Cgamma) is given by
-     ![](https://latex.codecogs.com/gif.latex?%5Ctextit%7B%24prox_%7B%5Cgamma%20f%7D%28v%29%24%7D%20%3D%20argmin%28f%28x%29%20&plus;%20%5Cgamma%20%7C%7Cx-v%7C%7C%5E%7B2%7D%29)
+> ![](https://latex.codecogs.com/gif.latex?%5Ctextit%7B%24prox_%7B%5Cgamma%20f%7D%28v%29%24%7D%20%3D%20argmin%28f%28x%29%20&plus;%20%5Cgamma%20%7C%7Cx-v%7C%7C%5E%7B2%7D%29)
 if the function is taken is taken as f(x) = constant, which is the case with us, proximal will be same as v. Hence, the update rule remains the same. 
+
+
+### Complexity and Convergence Ananlysis 
+
+FISTA has improved iteration complexity (i.e. ![](https://latex.codecogs.com/gif.latex?O%28%5Cfrac%7B1%7D%7B%5Csqrt%7B%5Cepsilon%7D%7D%29)) than proximal
+gradient method (i.e. ![](https://latex.codecogs.com/gif.latex?O%28%5Cfrac%7B1%7D%7B%5Cepsilon%7D%29)). Also, fast if proximal can be efficiently implemented. Convergence is similar to that of the Nesterov since coefficient ![](https://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Ctheta_%7Bk%7D%20-%201%7D%7B%5Ctheta_%7Bk&plus;1%7D%7D)  is asymptotically equivalent to ![](https://latex.codecogs.com/gif.latex?%5Cfrac%7Bk%7D%7Bk&plus;3%7D)
+
+## Results from Serial Code 
+Convergence steps required for the  each algorithm vs the size of the problem i.e n is shown.
+
+ 
 
 
 
