@@ -115,3 +115,36 @@ gradient method (i.e. ![](https://latex.codecogs.com/gif.latex?O%28%5Cfrac%7B1%7
 Convergence steps required for the  each algorithm vs the size of the problem i.e n is shown.
 ![](https://github.com/anujasaini/Accelerated-Gradient-Descent-/blob/master/img/steps.png) <!-- .element height="50%" width="50%" -->
 ![](https://github.com/anujasaini/Accelerated-Gradient-Descent-/blob/master/img/time_taken.png) 
+
+
+## Shift to Parallel Programming Paradigm
+The serial code implementation will work fine and take only reasonable amount of time when the size of matrix A will be below a certain threshold. But as the size of matrix A will increase,the time for convergence for all the 4 techniques will increase and that is why we need parallel implementation of the same serial implementation so as to reduce this time of convergence significantly even for large size of matrix A.
+
+## Parallel Segment Identification
+When applying gradient descent or any of its 3 variants there are some basic utility functions which are called by these gradient descent methods to perform the matrix and vector operations. Now these matrix and vector operations are the main points where the time complexity of the implementation is decided. If these operations will be slow then our overall implementation will be slow and vice-versa. So to tackle this problem in case of large matrix A, we try to parallelise these utility functions. Parallelising these operations reduces the overall time complexity significantly. We use NVIDIA's parallel computing architecture, CUDA to parallelize these utility functions.
+
+## Parallel Implementation 
+This section includes the pseudo code for the matrix and vector functions implemented by us. We can parallel the whole code by either paralleling the matrix/vector operations, which is paralleling at the lowest level. Since every thing boils down to the matrix ops we will get a overall performance gain. 
+
+Also this will involve copying of the various data for each of the sub operations involved in calculations of gradient. We can avoid this by implementing a specific function for parallel gradient computation.
+
+## Comparison of Parallel and Serial Code
+Following table compares the time taken for the respective utility functions for serial and parallel implementation in CUDA.
+
+## Observation 
+For performance analysis, Time taken VS n is each plotted for n=1 to n=100000, where n denotes the size of the matrix A, for each of the four different techniques. Also the number of steps taken to converge is plotted against n for serial implementation and same graph is obtained for parallel implementation.
+
+Following observations can be made for serial implementation:
+    - Steps/time taken to converge for heavy ball is less than GD.
+    - And steps/time taken to converge for Nestrov and FISTA is almost same and less than heavy ball.
+
+Following observations can be made for parallel implementation:
+    - Steps/time taken to converge for heavy ball is less than GD.
+    - And steps/time taken to converge for Nestrov and FISTA is almost same and less than heavy ball.
+
+Comparison of two implementations:
+    - Time taken by individual utility function is calculated for serial and parallel implementation of these functions.
+    - Performance of these utility functions is shown using the ratio of time taken by CPU and time taken by GPU.
+    - No effect in the number of steps taken to converge.
+    - Time taken to converge gets reduced as compared to serial implementation.
+
