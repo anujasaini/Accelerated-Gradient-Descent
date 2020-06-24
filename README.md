@@ -128,8 +128,11 @@ This section includes the pseudo code for the matrix and vector functions implem
 
 Also this will involve copying of the various data for each of the sub operations involved in calculations of gradient. We can avoid this by implementing a specific function for parallel gradient computation.
 
+![](https://github.com/anujasaini/Accelerated-Gradient-Descent-/blob/master/img/parallel.png)
+
 ## Comparison of Parallel and Serial Code
 Following table compares the time taken for the respective utility functions for serial and parallel implementation in CUDA.
+![](https://github.com/anujasaini/Accelerated-Gradient-Descent-/blob/master/img/Capture.PNG)
 
 ## Observation 
 For performance analysis, Time taken VS n is each plotted for n=1 to n=100000, where n denotes the size of the matrix A, for each of the four different techniques. Also the number of steps taken to converge is plotted against n for serial implementation and same graph is obtained for parallel implementation.
