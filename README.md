@@ -135,16 +135,16 @@ Following table compares the time taken for the respective utility functions for
 For performance analysis, Time taken VS n is each plotted for n=1 to n=100000, where n denotes the size of the matrix A, for each of the four different techniques. Also the number of steps taken to converge is plotted against n for serial implementation and same graph is obtained for parallel implementation.
 
 Following observations can be made for serial implementation:
-    - Steps/time taken to converge for heavy ball is less than GD.
-    - And steps/time taken to converge for Nestrov and FISTA is almost same and less than heavy ball.
+- Steps/time taken to converge for heavy ball is less than GD.
+- And steps/time taken to converge for Nestrov and FISTA is almost same and less than heavy ball.
 
 Following observations can be made for parallel implementation:
-    - Steps/time taken to converge for heavy ball is less than GD.
-    - And steps/time taken to converge for Nestrov and FISTA is almost same and less than heavy ball.
+- Steps/time taken to converge for heavy ball is less than GD.
+- And steps/time taken to converge for Nestrov and FISTA is almost same and less than heavy ball.
 
 Comparison of two implementations:
-    - Time taken by individual utility function is calculated for serial and parallel implementation of these functions.
-    - Performance of these utility functions is shown using the ratio of time taken by CPU and time taken by GPU.
-    - No effect in the number of steps taken to converge.
-    - Time taken to converge gets reduced as compared to serial implementation.
+- Time taken by individual utility function is calculated for serial and parallel implementation of these functions.
+- Performance of these utility functions is shown using the ratio of time taken by CPU and time taken by GPU.
+- No effect in the number of steps taken to converge.
+- Time taken to converge gets reduced as compared to serial implementation.
 
